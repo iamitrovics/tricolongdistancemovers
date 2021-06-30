@@ -1,0 +1,421 @@
+// Custom Mixins
+
+// fade animation
+@mixin animate-fade {
+    transition: .25s ease-in-out;
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    } 
+    100% {
+        transform: translateY(0);
+    } 
+}
+
+@mixin abs-position ($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin font-ico {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Font Awesome 5 Pro';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    position: absolute;
+
+}
+
+@mixin clear-pos {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+}
+
+// center vert horizontal
+@mixin centre($axis: "both") {
+    position: absolute;
+
+    @if $axis=="y" {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    @if $axis=="x" {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    @if $axis=="both" {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+// plceholder
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// clearfix
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin breakpoint($value) {
+
+    @if $value == 'desktop' {
+
+        @media only screen and (min-width : 1100px) and (max-width:1459px)  { @content; }   
+
+    } @else if $value == 'desktop-lg' {
+  
+       @media only screen and (min-width : 1660px) { @content; }        
+  
+    } @else {
+  
+      @media only screen and (min-width : 240px) and (max-width : $value) { @content; }
+    }
+  }
+
+@mixin small-lap {
+    @media screen and (min-width: 1025px) and (max-height: 767px) {
+        @content;
+    }
+}
+
+@mixin font-ico {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Font Awesome 5 Pro';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    position: absolute;
+}
+  
+// overlay
+@mixin overlay($bg:transparent) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background:$bg;
+}
+
+
+@mixin page-title {
+    font-family: $fil-black;
+    font-size: 3.750em;
+    line-height: 1.333;
+    text-align: left;
+    color: $brown-light;
+    margin: 0;
+    margin-bottom: 0;
+    @include breakpoint (desktop) {
+        font-size: 2.625em;
+    }
+    @include media-breakpoint-only(lg) {
+        font-size: 2.250em;
+    }
+    @include media-breakpoint-only(md) {
+        font-size: 2.250em;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1.875em;
+    }
+}
+
+@mixin heading-font {
+    font-family: $fil-bold;
+    font-size: 2.813em;
+    line-height: 1.244;
+    text-align: center;
+    color: $brown-light;
+    margin-bottom: 70px;
+    letter-spacing: -0.004em;
+    @include breakpoint (desktop) {
+        font-size: 2.375em;
+    }
+    @include media-breakpoint-only(lg) {
+        font-size: 2.250em;
+        margin-bottom: 60px;
+    }
+    @include media-breakpoint-only(md) {
+        font-size: 2em;
+        margin-bottom: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1.7em;
+        margin-bottom: 40px;
+    }
+}
+
+@mixin subheading-font {
+    font-family: $fil-med;
+    font-size: 2.000em;
+    line-height: 1.125;
+    text-align: center;
+    color: $brown-light;
+    @include breakpoint (desktop) {
+        font-size: 1.9em;
+    }
+    @include media-breakpoint-only(lg) {
+        font-size: 1.7em;
+    }
+    @include media-breakpoint-only(md) {
+        font-size: 1.5em;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1.4em;   
+    }
+}
+
+@mixin regular-text {
+    font-size: 1.125em;
+    letter-spacing: 0.03em;
+    line-height: 1.444;
+    color: #E0E0E0;
+    margin-bottom: 25px;
+    @include media-breakpoint-only(md) {
+        font-size: 1.1em;   
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1em;   
+    }
+}
+@mixin red-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 12px;
+    height: 73px;
+    font-family: $bilo-ebold;
+    font-size: 1.875em;
+    color: $brown-light;
+    padding-left: 35px;
+    padding-right: 85px;
+    @include animate-fade;
+    background-color: $red;
+    position: relative;
+    @include breakpoint (desktop) {
+        padding-left: 25px;
+        padding-right: 85px;
+        font-size: 1.5em;
+    }
+    @include media-breakpoint-down(lg) {
+        padding-left: 25px;
+        padding-right: 85px;
+        font-size: 1.5em;
+        height: 65px;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        padding-right: 25px;
+    }
+    i {
+        font-size: 30px;
+        @include centre(y);
+        right: 38px;
+        @include animate-fade;
+        border-radius: 50%;
+        &:before {
+            position: relative;
+            left: 3px;
+        }
+        @include media-breakpoint-down(lg) {
+            font-size: 22px;
+        }
+        @include media-breakpoint-down(sm) {
+            right: 30px;
+        }
+    }
+    &:hover {
+        i {
+            right: 30px;
+            @include media-breakpoint-down(sm) {
+                right: 20px;
+            }
+        }
+    }
+}
+
+@mixin yellow-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 73px;
+    background: transparent;
+    border: 5px solid $yellow;
+    border-radius: 12px;
+    @include animate-fade;
+    font-family: $bilo-ebold;
+    font-size: 1.875em;
+    color: $yellow;
+    position: relative;
+    padding: 0 40px;
+    @include breakpoint (desktop) {
+        padding: 0 20px;
+        font-size: 1.5em;
+    }
+    @include media-breakpoint-down(lg) {
+        padding: 0 20px;
+        font-size: 1.5em;
+        height: 65px;
+    }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+    &:hover {
+        background-color: $yellow;
+        color: #fff;
+        i {
+            color: #fff;
+        }
+    }
+}
+
+@mixin footer-font {
+    font-family: $fil-light;
+    font-size: 1.250em;
+    color: $brown-light;
+    @include breakpoint (desktop) {
+        font-size: 1.1em;
+    }
+    @include media-breakpoint-only(md) {
+        font-size: 1.2em;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 1em;   
+    }
+}
+
+@mixin input-style {
+    display: block;
+    width: 100%;
+    height: 97px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.03);
+    font-family: $fil-book;
+    font-size: 22px;
+    text-align: left;
+    color: #724e4e;
+    padding: 0 40px;
+    @include input-placeholder {
+        color: #818a91;
+    }
+    @include breakpoint (desktop) {
+        font-size: 1.3em;
+        height: 80px;
+    }
+    @include media-breakpoint-only(lg) {
+        font-size: 1.2em;
+        height: 70px;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.1em;
+        padding: 0 20px;
+        height: 60px;
+    }
+}
+
+@mixin form-btn {
+    border: 0;
+    display: block;
+    margin-left: auto;
+    border-radius: 12px;
+    background: #d41615;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.03);
+    padding: 20px 65px 20px 33px;
+    background-color: $red;
+    font-family: $fil-med;
+    font-size: 22px;
+    color: $brown-light;
+    text-transform: uppercase;
+    position: relative;
+    @include animate-fade;
+    @include breakpoint (desktop) {
+        font-size: 1.3em;
+    }
+    @include media-breakpoint-only(lg) {
+        font-size: 1.2em;
+    }
+    @include media-breakpoint-down(md) {
+        font-size: 1.1em;
+    }
+    i {
+        font-size: 28px;
+        @include animate-fade;
+        @include centre(y);
+        right: 30px;
+    }
+    &:hover {
+        background-color: #FC4D18;
+        color: #fff;
+        i {
+            right: 20px;
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+
+

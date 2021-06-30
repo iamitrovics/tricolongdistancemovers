@@ -1,0 +1,27 @@
+//FAQ page
+#faq-page {
+	padding-top: 65px;
+	padding-bottom: 130px;
+	@include breakpoint (desktop) {
+        padding-bottom: 120px;
+    }
+    @include media-breakpoint-only(lg) {
+        padding-bottom: 90px;
+    }
+    @include media-breakpoint-only(md) {
+        padding-bottom: 70px;
+    }
+    @include media-breakpoint-down(sm) {
+    	padding-top: 50px;
+        padding-bottom: 50px;
+    }
+	h2,h3,p {
+		@include regular-text;
+	}
+	h2,h3 {
+		font-family: $fil-bold;
+	}
+	h3 {
+		color: $yellow;
+	}
+}
