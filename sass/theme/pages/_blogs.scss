@@ -61,6 +61,7 @@
     }
 	h2 {
 		margin-bottom: 65px;
+		text-align: left;
 		@include media-breakpoint-only(md) {
 	        margin-bottom: 50px;;
 	    }
@@ -73,6 +74,7 @@
 	}
 	h3 {
 		margin-top: 65px;
+		text-align: left;
 		@include media-breakpoint-only(md) {
 	        margin-top: 50px;
 	    }
@@ -81,7 +83,6 @@
     	}
 	}
     .blog-photo {
-    	max-width: 1061px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -119,17 +120,18 @@
 		}
 	}
 	.main__content {
-		max-width: 1200px;
 		margin:0px auto;
 		iframe {
 			max-width: 100%;
 			margin:0px auto;
 			display:block;
 		}	
+		p {
+			max-width: 100%;
+		}
 	}
 	// accordion
 	.blog__accordion {
-		max-width: 1061px;
 		margin:0px auto;
 		h4 {
 			text-align: left;
@@ -153,7 +155,6 @@
 	}
 	.single-table {
         margin-bottom: 30px;
-		max-width: 1061px;
 		margin-left: auto;
 		margin-right: auto;
 	
@@ -176,4 +177,278 @@
     }
 }
 
+// CTA
+#blog-cta {
+	margin-bottom: 60px;
+	.cta-wrapper {
+		background: #3c2929;
+		border-radius: 20px;
+		padding:40px;
+		ul.nav-tabs {
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			border:none;
+			margin-bottom: 25px;
+			li {
+				margin-left: 15px;
+				margin-right: 15px;
+				border:none;
+				font-family: $fil-bold;
+				@include media-breakpoint-only(md) {
+					margin-left: 5px;
+					margin-right: 5px;
+				}
+				a {
+					border:none;
+					color:$white;
+					font-size: 18px;
+					@include media-breakpoint-only(md) {
+						font-size: 16px;
+					}
+					&.active {
+						background:#4e3a3a;
+						border-radius: 30px;
+						color:#d4a629!important;
+					}
+				}
+			}
+		}
+		.tab-pane {
+			button[type="submit"] {
+				@include form-btn;
+				@include media-breakpoint-down(md) {
+					width: 100%;
+					margin-bottom: 30px;
+				}
+			}
+			.control--checkbox {
+				color:$white;
+				a {
+					color:$yellow;
+				}
+			}	
+			
+			.control--checkbox {
+				font-size: 14px;
+				color: $red;
+				display: block;
+				margin-bottom: 5px;
+				padding-left: 0px;
+				margin-left: 0px;		
+				font-size: 15px!important;
+			}
+		
+			.zebra_tooltips_below {
+				color: #dd3333;
+				text-decoration: underline;
+				font-size: 16px;
+			}
+		
+			.control__indicator {
+				height: 16px;
+				width: 16px;
+				top: 1px!important;
+				&:after {
+					left: 5px;
+					top: 1px;
+				}
+			}
+		
+			.control-group {
+				display: inline-block;
+				vertical-align: top;
+				background: #fff;
+				text-align: left;
+				box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+				padding: 30px;
+				width: 200px;
+				height: 210px;
+				margin: 10px;
+			  }
+			  .control {
+				display: block;
+				position: relative;
+				padding-left: 40px;
+				cursor: pointer;
+				font-size: 18px;
+				margin-right: 20px;
+			  }
+			  .control input {
+				position: absolute;
+				z-index: -1;
+				opacity: 0;
+			  }
+			  .control__indicator {
+				position: absolute;
+				top: -5px;
+				left: 0;
+				height: 24px;
+				width: 24px;
+				background: #fff;
+				border:1px solid #afafb0;
+			  }
+			  .control--radio .control__indicator {
+				border-radius: 50%;
+			  }
+			  .control:hover input ~ .control__indicator,
+			  .control input:focus ~ .control__indicator {
+				background: #ccc;
+			  }
+			  .control input:checked ~ .control__indicator {
+				background: $red; /*$hover*/
+			  }
+			  .control:hover input:not([disabled]):checked ~ .control__indicator,
+			  .control input:checked:focus ~ .control__indicator {
+				background:#000; /*$hover*/
+				border:1px solid #000; /*$hover*/
+			  }
+			  .control input:disabled ~ .control__indicator {
+				background: #e6e6e6;
+				opacity: 0.6;
+				pointer-events: none;
+			  }
+			  .control__indicator:after {
+				content: '';
+				position: absolute;
+				display: none;
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				 box-sizing: content-box; 
+			  }
+			  .control input:checked ~ .control__indicator:after {
+				display: block;
+			  }
+			  .control--checkbox .control__indicator:after {
+				left: 9px;
+				top: 5px;
+				width: 3px;
+				height: 8px;
+				border: solid #fff;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+			  }
+			  .control--checkbox input:disabled ~ .control__indicator:after {
+				border-color: #7b7b7b;
+			  }
+			  
+			  .control--checkbox {
+				.control__indicator {
+				  top: -3px;
+				}
+			  }
+			  
+			  .control--radio .control__indicator {
+				top: -2px;
+			  }
+			  .control--radio .control__indicator:after {
+			   left: 7px;
+				top: 7px;
+				height: 8px;
+				width: 8px;
+				border-radius: 50%;
+				background: #fff;
+			  }
+			  .control--radio input:disabled ~ .control__indicator:after {
+				background: #7b7b7b;
+			  }	
 
+			  span.label {
+				  display: block;
+				  color:$white;
+				  margin-bottom: 5px;
+			  }
+		
+
+			.form-group {
+				margin-bottom: 30px;
+				@include media-breakpoint-down(sm) {
+					margin-bottom: 10px;
+				}
+				input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+					width: 100%;
+					height: 61px;
+					border-radius: 12px;
+					background: #dac4ae;
+					border: 1px solid #ddd;
+					box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+					font-family: "Filson Soft Regular";
+					font-size: 1.375;
+					color: #724e4e;
+					padding: 0 80px 0 40px;
+				}
+
+				// select
+				.bootstrap-select {
+					width: 100%;
+				}
+				button.btn {
+					width: 100%;
+					border-radius: 12px;
+					background: #dac4ae;
+					border: 1px solid #ddd;
+					box-shadow: 5px 5px 10px rgb(0 0 0 / 3%);
+					font-family: "Filson Soft Regular";
+					font-size: 1.375;
+					color: #724e4e;
+					height: 61px;
+					line-height: 61px;
+					padding: 0 80px 0 40px;
+					&:focus {
+						outline: 0!important;
+					}
+					.filter-option-inner {
+						height: 61px;
+						line-height: 61px;
+					}
+				}
+				.dropdown-menu {
+					border-radius:12px;
+				}
+
+				.dropdown-item.active, .dropdown-item:active {
+					background: transparent!important;
+					color:$red;
+				}
+
+				.dropup .dropdown-toggle:after, .dropdown-toggle:after {
+					@include centre(y);
+					right:15px;
+				}
+
+			}
+		}
+	}
+}
+
+// Cta
+.quote-cta--single {
+	border-radius: 20px;
+	padding:30px;
+	background:#100505;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include media-breakpoint-down(lg) {
+		display: block;
+		text-align: center;
+	}
+	span.title {
+		display: block;
+		color:$yellow;
+		font-size: 42px;
+		margin-right: 30px;
+		display: block;
+		line-height: 1.3;
+		@include media-breakpoint-down(lg) {
+			margin-right: 0px;
+			margin-bottom: 20px;
+			font-size: 36px;
+		}
+	}
+	.btn-cta {
+		@include red-button;
+	}
+}

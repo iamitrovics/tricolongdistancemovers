@@ -55,7 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div id="blog-detailed">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-8 offset-lg-2">
 
                 <?php
                     // check if the flexible content field has rows of data
@@ -199,6 +199,14 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 </div>
                                 <!-- // section  -->
 
+                                <?php elseif( get_row_layout() == 'quote_cta' ): ?>
+
+                                    <div class="quote-cta--single">
+                                        <span class="title"><?php the_sub_field('cta_title'); ?></span>
+                                        <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?> <i class="fas fa-chevron-circle-right"></i></a>
+                                    </div>
+                                    <!-- // single  -->                                      
+
                                 <?php elseif( get_row_layout() == 'table' ): ?>
 
                                 <table style="width:100%" class="single-table">
@@ -278,6 +286,59 @@ $container = get_theme_mod( 'understrap_container_type' );
         </div>
     </div>
 </div>   
+
+<div id="blog-cta">
+    <div class="container">
+        <div class="row" id="bottom-form">
+            <div class="col-lg-8 offset-lg-2">
+
+                <div class="cta-wrapper">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#moving-home" role="tab" aria-controls="home" aria-selected="true">
+                                Moving your Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#moving-car" role="tab" aria-controls="profile" aria-selected="false">
+                                Moving your Car
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#moving-both" role="tab" aria-controls="contact" aria-selected="false">Moving Both</a>
+                        </li>
+                    </ul>
+                    <!-- // tabs  -->
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="moving-home" role="tabpanel" aria-labelledby="home-tab">
+                            <?php echo do_shortcode('[contact-form-7 id="28874" title="Moving Your Home"]'); ?>
+                        </div>
+                        <!-- // tab 1  -->
+                        <div class="tab-pane fade" id="moving-car" role="tabpanel" aria-labelledby="profile-tab">
+                            <?php echo do_shortcode('[contact-form-7 id="28878" title="Moving your Car"]'); ?>
+                        </div>
+                        <!-- // tab 2  -->
+                        <div class="tab-pane fade" id="moving-both" role="tabpanel" aria-labelledby="contact-tab">
+                            <?php echo do_shortcode('[contact-form-7 id="28881" title="Moving Both"]'); ?>
+                        </div>
+                        <!-- // tab 3  -->
+                    </div>
+                    <!-- // tab content  -->
+
+                </div>
+                <!-- // wrapper  -->
+
+            </div>
+            <!-- // col  -->
+        </div>
+        <!-- // row  -->
+
+    </div>
+    <!-- // container  -->
+</div>
+<!-- // blog cta  -->
 
 <?php
 get_footer();
