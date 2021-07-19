@@ -371,11 +371,23 @@
             margin-left: auto;
             img {
                 border-radius: 4px;
+                width: 100%;
             }
             .blog-info {
                 display: flex;
                 padding-top: 15px;
+                @media (max-width: 600px) {
+                    display: block;
+                    text-align: left;
+                }
                 span {
+                    a {
+                        color: $red;
+                        &:hover {
+                            color: $yellow;
+                            text-decoration: none;
+                        }
+                    }
                     display: block;
                     font-family: $fil-book;
                     font-size: 15px;
