@@ -135,5 +135,8 @@
             $('.homesizes input:checked').next('label').addClass("checked");
         });
         $('.default-form .form-group select').selectpicker();
+
+        $('.main__content a').attr("target","_blank");
+
 	});
 })(jQuery);
