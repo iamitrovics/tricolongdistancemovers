@@ -133,7 +133,7 @@
             background: transparent;
             @include breakpoint (desktop) {
                 font-size: 1.3em;
-                padding: 0 20px;
+                padding: 0 15px;
             }
             @include media-breakpoint-only(lg) {
                 font-size: 1.2em;
@@ -146,7 +146,7 @@
             }
             @media screen and (min-width:1460px) and (max-width:1570px) {
                 font-size: 1.2em;
-
+                padding: 0 15px;
             }
             &.dropdown-toggle {
                 &:after {
@@ -161,7 +161,8 @@
     .dropdown-menu {
         position: absolute;
         top: 100%;
-        left: 0;
+        left: auto;
+        right: 0;
         z-index: 1000;
         display: none;
         float: left;
