@@ -50,6 +50,12 @@
         display: none!important;
     }
     .nav-item {
+        &:last-child {
+            .dropdown-menu {
+                left: auto;
+                right: 0;
+            }
+        }
         height: 100%;
         align-self: stretch;
         margin-left: 0;
@@ -161,8 +167,7 @@
     .dropdown-menu {
         position: absolute;
         top: 100%;
-        left: auto;
-        right: 0;
+        left: 0;
         z-index: 1000;
         display: none;
         float: left;
