@@ -12,7 +12,49 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
+	<div class="cert-secure">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="footer-title"><?php the_field('block_title_revies_footer', 'options'); ?></h2>
+						<div class="cert-helper">
+							<div class="reviews-certifications">
+								
+								<!-- TrustBox widget - Starter -->
+								<div class="trustpilot-widget" data-locale="en-US" data-template-id="5613c9cde69ddc09340c6beb" data-businessunit-id="56ba71c70000ff000588b8ba" data-style-height="100%" data-style-width="100%" data-theme="light">
+									<a href="https://www.trustpilot.com/review/tricolongdistancemovers.com" target="_blank" rel="noopener">Trustpilot</a>
+								</div>
+								<!-- End TrustBox widget -->
 
+								<div><a target="_blank" id="bbblink" class="rbhzbam" href="https://www.bbb.org/us/ca/los-angeles/profile/moving-and-storage-companies/trico-long-distance-transportation-llc-1216-353057#bbbseal" title="Trico Long Distance Transportation, LLC is a BBB Accredited Moving andor Storage Company in Los Angeles, CA" style="display: block;position: relative;overflow: hidden; width: 150px; height: 57px; margin: 0px; padding: 0px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-sanjose.bbb.org/logo/rbhzbam/trico-long-distance-transportation-353057.png" width="300" height="57" alt="Trico Long Distance Transportation, LLC is a BBB Accredited Moving andor Storage Company in Los Angeles, CA" /></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); (function(){var s=document.createElement('script');s.src=bbbprotocol + 'seal-sanjose.bbb.org' + unescape('%2Flogo%2Ftrico-long-distance-transportation-353057.js');s.type='text/javascript';s.async=true;var st=document.getElementsByTagName('script');st=st[st.length-1];var pt=st.parentNode;pt.insertBefore(s,pt.nextSibling);})();</script></div>
+
+								<?php if( have_rows('reviews_certifications_list_footer_icon', 'options') ): ?>
+									<?php while( have_rows('reviews_certifications_list_footer_icon', 'options') ): the_row(); ?>
+										<a target="_blank" href="<?php the_sub_field('logo-icon-link'); ?>"><?php the_sub_field('logo-icon'); ?></a>
+									<?php endwhile; ?>
+								<?php endif; ?>
+
+								<?php if( have_rows('reviews_certifications_list_footer_img', 'options') ): ?>
+									<?php while( have_rows('reviews_certifications_list_footer_img', 'options') ): the_row(); ?>
+										<a target="_blank" href="<?php the_sub_field('logo-img-link'); ?>"><img class="small-img" src="<?php the_sub_field('logo-img'); ?>" alt=""></a>
+									<?php endwhile; ?>
+								<?php endif; ?>
+								<div class="security">
+									<img class="small-img" src="<?php the_field('security_seal_footer', 'options'); ?>" alt="">
+								</div> 
+								<!-- security -->
+							</div>
+							<!-- /.reviews-certifications -->
+						</div>
+						<!-- /.cert-helper -->
+					</div>
+				<!-- /.col -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.cert-secure -->
 	<footer id="page-footer">
 		<div class="container">
 			<div class="row">
@@ -25,22 +67,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<div class="footer-text">
 							<p><?php the_field('company_id_footer', 'options'); ?></p>
 						</div>
-						<div class="cert-secure">
-							<span class="footer-title"><?php the_field('block_title_revies_footer', 'options'); ?></span>
-							<div class="ceritifactions">
-								<?php if( have_rows('certifications_list_footer', 'options') ): ?>
-									<?php while( have_rows('certifications_list_footer', 'options') ): the_row(); ?>
-										<img src="<?php the_sub_field('logo'); ?>" alt="">
-									<?php endwhile; ?>
-								<?php endif; ?>
-							</div>
-							<!-- /.ceritifactions -->
-							<div class="security">
-								<img src="<?php the_field('security_seal_footer', 'options'); ?>" alt="">
-							</div>
-							<!-- /.security -->
-						</div>
-						<!-- /.cert-secure -->
 					</div>
 				</div>
 				<!-- /.col -->

@@ -161,27 +161,6 @@
 				}
 			}
 		}
-		.cert-secure {
-			margin-top: 65px;
-			@include media-breakpoint-only(lg) {
-		        margin-top: 50px;
-		    }
-		    @include media-breakpoint-only(md) {
-		        margin-top: 40px;
-		    }
-		    @include media-breakpoint-down(sm) {
-		        margin-top: 30px;
-		    }
-			.ceritifactions {
-				img {
-					display: inline-block;
-					margin-right: 15px;
-				}
-			}
-			.security {
-				margin-top: 15px;
-			}
-		}
 	}
 	.follow-us {
 		margin-top: 20px;
@@ -420,8 +399,57 @@
 	}
 }
 
-
-
+.cert-secure {
+	padding: 30px 0;
+	background: $brown-light;
+	h2 {
+		@include heading-font;
+		color: $brown-dark;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.cert-helper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.reviews-certifications {
+			text-align: center;
+			.trustpilot-widget {
+				width: 190px;
+			}
+			.security {
+				margin-right: 0;
+			}
+			div {
+				display: inline-block;
+				margin-right: 15px;
+				vertical-align: middle;
+				@include media-breakpoint-down(md) {
+					margin-bottom: 20px;
+					margin-left: 15px;
+				}
+			}
+			img {
+				margin-right: 40px;
+				@include media-breakpoint-down(md) {
+					margin-bottom: 20px;
+				}
+				&.small-img {
+					width: 100px;
+				}
+			}
+			a {
+				vertical-align: middle;
+				i {
+					font-size: 46px;
+					margin: 0 40px;
+					color: $brown-dark;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
 
 /*=======End of Footer ========*/
 
