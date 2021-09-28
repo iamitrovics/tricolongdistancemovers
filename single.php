@@ -49,8 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             $categories = get_the_category($post->ID);
                             $cat_link = get_category_link($categories[0]->cat_ID);
                             echo '<a href="'.$cat_link.'">'.$categories[0]->cat_name.'</a>' 
-                            ?>   /                            
-                            By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>                             
+                            ?>                            
                         </span>
                     </div>
                 </div>
