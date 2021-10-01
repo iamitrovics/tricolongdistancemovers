@@ -364,5 +364,149 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div>
 <!-- // blog cta  -->
 
+<section class="similar-posts first-child-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Recent posts</h2>
+                <div class="posts-list">
+                    <div class="row">
+
+                    <?php
+                        $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3) ); ?>  
+                        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-box">
+                                <div class="blog-photo">
+                                    <a href="<?php echo get_permalink(); ?>">
+                                        <span><i class="fal fa-long-arrow-right"></i></span>
+                                            <?php 
+                                            $values = get_field( 'featured_image_blog' );
+                                            if ( $values ) { ?>
+                                                <?php
+                                                $imageID = get_field('featured_image_blog');
+                                                $image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+                                                $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                ?> 
+
+                                                <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" />                                             
+                                            <?php 
+                                            } else { ?> 
+                                                <img src="<?php bloginfo('template_directory'); ?>/img/misc/placeholder.jpg" alt="">
+                                            <?php } ?>
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-info">
+                                        <span class="date"><i class="fas fa-calendar-alt"></i><?php echo get_the_date( 'F j, Y' ); ?></span>
+                                        <span class="author">
+                                        <?php $author_id = get_the_author_meta( 'ID' ); ?>
+                                        <?php the_author_meta( 'display_name', $author_id ); ?>    
+                                        </span>
+                                    </div>
+                                    <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.col-lg-4 col-md-6 --> 
+
+                            <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>    
+                    <?php wp_reset_query(); ?>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.posts-list -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.similar-posts -->
+
+<section class="similar-posts last-child-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Related posts</h2>
+                <div class="posts-list">
+                    <div class="row">
+
+                        <?php
+                            $categories =   get_the_category();
+                            // print_r($categories);
+                            $rp_query   =  new WP_Query ([
+                                'posts_per_page'        =>  3,
+                                'post__not_in'          =>  [ $post->ID ],
+                                'cat'                   =>  !empty($categories) ? $categories[0]->term_id : null,
+
+                            ]);
+
+                            if ( $rp_query->have_posts() ) {
+                                while( $rp_query->have_posts() ) {
+                                    $rp_query->the_post();
+                                    ?>
+
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="blog-box">
+                                            <div class="blog-photo">
+                                                <a href="<?php echo get_permalink(); ?>">
+                                                    <span><i class="fal fa-long-arrow-right"></i></span>
+                                                        <?php 
+                                                        $values = get_field( 'featured_image_blog' );
+                                                        if ( $values ) { ?>
+                                                            <?php
+                                                            $imageID = get_field('featured_image_blog');
+                                                            $image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+                                                            $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                            ?> 
+
+                                                            <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" />                                             
+                                                        <?php 
+                                                        } else { ?> 
+                                                            <img src="<?php bloginfo('template_directory'); ?>/img/misc/placeholder.jpg" alt="">
+                                                        <?php } ?>
+                                                </a>
+                                            </div>
+                                            <div class="blog-content">
+                                                <div class="blog-info">
+                                                    <span class="date"><i class="fas fa-calendar-alt"></i><?php echo get_the_date( 'F j, Y' ); ?></span>
+                                                    <span class="author">
+                                                    <?php $author_id = get_the_author_meta( 'ID' ); ?>
+                                                    <?php the_author_meta( 'display_name', $author_id ); ?>    
+                                                    </span>
+                                                </div>
+                                                <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.col-lg-4 col-md-6 --> 
+
+                                    <?php
+                                }
+
+                                wp_reset_postdata();
+
+                            }
+
+                        ?>
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.posts-list -->
+            </div>
+            <!-- /.col-md-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.similar-posts -->
+
 <?php
-get_footer();
+get_footer(); ?>
