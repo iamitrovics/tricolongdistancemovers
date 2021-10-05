@@ -211,7 +211,48 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         <span class="title"><?php the_sub_field('cta_title'); ?></span>
                                         <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?> <i class="fas fa-chevron-circle-right"></i></a>
                                     </div>
-                                    <!-- // single  -->                                      
+                                    <!-- // single  -->  
+                                    
+                                <?php elseif( get_row_layout() == 'featured_article' ): ?>    
+                                    <?php
+                                        $post_objects = get_sub_field('featured_article_list');
+
+                                        if( $post_objects ): ?>
+                                            <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                                                <?php setup_postdata($post); ?>
+                                                    
+                                                <div class="featured-article-box">
+                                                    <div class="blog-box">
+                                                        <div class="blog-photo">
+                                                            <a href="<?php echo get_permalink(); ?>" target="_blank">
+                                                                <?php 
+                                                                $values = get_field( 'featured_image_blog' );
+                                                                if ( $values ) { ?>
+                                                                    <?php
+                                                                    $imageID = get_field('featured_image_blog');
+                                                                    $image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+                                                                    $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+                                                                    ?> 
+
+                                                                    <img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" />                                             
+                                                                <?php 
+                                                                } else { ?> 
+                                                                    <img src="<?php bloginfo('template_directory'); ?>/img/misc/placeholder.jpg" alt="">
+                                                                <?php } ?>
+                                                            </a>
+                                                        </div>
+                                                        <div class="blog-content">
+                                                            <h3><a href="<?php echo get_permalink(); ?>" target="_blank"><?php the_title(); ?></a></h3>
+                                                            <a href="<?php echo get_permalink(); ?>" class="btn-cta" target="_blank">Read More<i class="fas fa-chevron-circle-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.featured-article -->
+                                                    
+                                            <?php endforeach; ?>
+                                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                    <?php endif; ?>
+                                    <?php wp_reset_postdata(); ?>
 
                                 <?php elseif( get_row_layout() == 'table' ): ?>
 
