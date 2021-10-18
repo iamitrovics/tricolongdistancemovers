@@ -58,10 +58,10 @@
 
 #blog-detailed {
 	@extend #regular-page;
-	padding-top: 170px;
+	padding-top: 120px;
 	padding-bottom: 30px;
 	@include breakpoint (desktop) {
-		padding-top: 130px;
+		padding-top: 100px;
     }
     @include media-breakpoint-only(lg) {
         padding-top: 90px;
@@ -592,4 +592,56 @@
 			}
         }
     }
+}
+
+#nav-slider {
+	.item {
+		padding-left: 10px;
+		padding-right: 10px;
+		.nav-col {
+			position: relative;
+			border-radius: 20px;
+			background: rgba(62,54,65,0.52);
+			margin-bottom: 32px;
+			text-align: center;
+			padding: 30px;		
+			&:hover {
+				span {
+					color:#dac4ae;
+				}
+			}
+			.icon {
+				height: 120px;
+				img {
+					@include centre(both);
+					width: 80px;
+					filter: brightness(0) invert(1);
+
+				}
+			}
+			span {
+				display: block;
+				font-family: $fil-med;
+				font-size: 1.625em;
+				line-height: 1.385;
+				text-align: center;
+				color: $yellow;
+				margin-bottom: 35px;
+				@include animate-fade;
+				@include animate-fade;
+				@include breakpoint (desktop) {
+					   font-size: 1.5em;
+				}
+				@include media-breakpoint-only(lg) {
+					font-size: 1.4em;
+				}
+				@include media-breakpoint-only(md) {
+					font-size: 1.4em;
+				}
+				@include media-breakpoint-down(sm) {
+					font-size: 1.4em;
+				}				
+			}	
+		}
+	}
 }

@@ -217,7 +217,7 @@ $slick-opacity-not-active: 0.25 !default;
     margin-bottom: 30px;
 }
 
-#testimonials-slider {
+#testimonials-slider, #nav-slider {
     .slick-prev {
        left: 0;
     }
@@ -266,6 +266,20 @@ $slick-opacity-not-active: 0.25 !default;
             &:before {
                 color: $brown-light;
             }
+        }
+    }
+}
+#nav-slider {
+    .slick-prev {
+       left: -70px;
+       @include media-breakpoint-down(md) {
+           left:0px;
+       }
+    }
+    .slick-next {
+        right: -70px;
+        @include media-breakpoint-down(md) {
+            right:0px;
         }
     }
 }

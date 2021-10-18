@@ -129,6 +129,42 @@
         });
       });   
 
+      $('#nav-slider').slick({
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        autoplay: true,
+        infinite: true,
+        autoplaySpeed: 4000,
+        responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+
+        ]
+    });         
+
 	    // add class to the selected radio button
 	    $('.homesizes input').click(function () {
             $('.homesizes input:not(:checked)').next('label').removeClass("checked");
