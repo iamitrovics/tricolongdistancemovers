@@ -126,6 +126,9 @@
 	&.services-blog-module {
 		padding: 0;
 		margin-top: 50px;
+		.service-box {
+			border: 2px solid $brown-light;
+		}
 	}
 	h2 {
 		@include heading-font;
