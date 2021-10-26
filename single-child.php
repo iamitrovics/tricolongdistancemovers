@@ -241,6 +241,34 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         <a href="#bottom-form" class="btn-cta"><?php the_sub_field('button_label'); ?> <i class="fas fa-chevron-circle-right"></i></a>
                                     </div>
                                     <!-- // single  -->  
+
+                                <?php elseif( get_row_layout() == 'services_module' ): ?>
+
+                                    <section id="services" class="services-blog-module">
+                                        <div class="row">
+
+                                        <?php
+                                            $post_objects = get_sub_field('services_list_blog_page');
+
+                                            if( $post_objects ): ?>
+                                                <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+                                                    <?php setup_postdata($post); ?>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="service-box">
+                                                            <h3><?php the_title(); ?></h3>
+                                                            <img src="<?php the_field('service_icon_serv'); ?>" alt="">
+                                                            <a href="<?php echo get_permalink(); ?>" target="_blank">Read More</a>
+                                                        </div>
+                                                    </div>
+
+                                                <?php endforeach; ?>
+                                            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                                        <?php endif; ?>
+
+
+                                        </div>
+                                    </section>
                                     
                                 <?php elseif( get_row_layout() == 'featured_article' ): ?>    
                                     <?php
@@ -285,26 +313,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                                 <?php elseif( get_row_layout() == 'table' ): ?>
 
-                                <table style="width:100%" class="single-table">
+                                    <table style="width:100%" class="single-table">
                                     <thead>
                                         <tr role="row">
-
                                         <?php
-
                                             // check if the repeater field has rows of data
                                             if(have_rows('table_head_cells')):
-
                                                 // loop through the rows of data
                                                 while(have_rows('table_head_cells')) : the_row();
-
                                                     $hlabel = get_sub_field('table_cell_label_thead');
-
                                                     ?>  
-
                                                     <th tabindex="0" rowspan="1" colspan="1"><?php echo $hlabel; ?></th>
-
                                                 <?php endwhile;
-
                                             else :
                                                 echo 'No data';
                                             endif;
@@ -313,44 +333,30 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                     <?php while ( have_posts() ) : the_post(); ?>
-
                                         <?php 
-
                                         // check for rows (parent repeater)
                                         if( have_rows('table_body_row') ): ?>
-                                            
                                             <?php 
-
                                             // loop through rows (parent repeater)
                                             while( have_rows('table_body_row') ): the_row(); ?>
-
                                                     <?php 
-
                                                     // check for rows (sub repeater)
                                                     if( have_rows('table_body_cells') ): ?>
                                                         <tr>
                                                             <?php 
-
                                                             // loop through rows (sub repeater)
                                                             while( have_rows('table_body_cells') ): the_row();
-
-                                                                
                                                                 ?>
                                                                 <td><?php the_sub_field('table_cell_label_tbody'); ?></td>
                                                             <?php endwhile; ?>
                                                         </tr>
                                                     <?php endif; //if( get_sub_field('') ): ?>
-
                                             <?php endwhile; // while( has_sub_field('') ): ?>
-                                                
                                         <?php endif; // if( get_field('') ): ?>
-
                                         <?php endwhile; // end of the loop. ?>
-                                        
                                     </tbody>
-                                </table>  
+                                </table> 
 
                             <?php endif;
                         endwhile;
