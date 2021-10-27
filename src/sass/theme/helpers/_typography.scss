@@ -1,0 +1,315 @@
+// Import fonts and fonts variables
+
+@font-face {
+    font-family: 'Filson Soft Black';
+    src: url('../fonts/FilsonSoftBlack.woff2') format('woff2'),
+        url('../fonts/FilsonSoftBlack.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Book';
+    src: url('../fonts/FilsonSoftBook.woff2') format('woff2'),
+        url('../fonts/FilsonSoftBook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Bold';
+    src: url('../fonts/FilsonSoft-Bold.woff2') format('woff2'),
+        url('../fonts/FilsonSoft-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Heavy';
+    src: url('../fonts/FilsonSoftHeavy.woff2') format('woff2'),
+        url('../fonts/FilsonSoftHeavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Light';
+    src: url('../fonts/FilsonSoftLight.woff2') format('woff2'),
+        url('../fonts/FilsonSoftLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Medium';
+    src: url('../fonts/FilsonSoftMedium.woff2') format('woff2'),
+        url('../fonts/FilsonSoftMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Regular';
+    src: url('../fonts/FilsonSoftRegular.woff2') format('woff2'),
+        url('../fonts/FilsonSoftRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Filson Soft Regular Italic';
+    src: url('../fonts/FilsonSoftRegular-Italic.woff2') format('woff2'),
+        url('../fonts/FilsonSoftRegular-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Bilo Light';
+    src: url('../fonts/Bilo-Light.woff2') format('woff2'),
+        url('../fonts/Bilo-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bilo ExtraBold';
+    src: url('../fonts/Bilo-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Bilo-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$fil-light: 'Filson Soft Light';
+$fil-reg: 'Filson Soft Regular';
+$fil-med: 'Filson Soft Medium';
+$fil-book: 'Filson Soft Book';
+$fil-bold: 'Filson Soft Bold';
+$fil-black: 'Filson Soft Black';
+$fil-regi: 'Filson Soft Regular Italic';
+
+$bilo-ebold: 'Bilo ExtraBold';
+$bilo-light: 'Bilo Light';
+
+$font-main: 'Filson Soft Regular';
+$font-heading:  'Filson Soft Bold';
+
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fa, .fab, .fas, .fal, .far {
+    font-family: 'icomoon';
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?cwpzvw');
+  src:  url('../fonts/icomoon.eot?cwpzvw#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?cwpzvw') format('truetype'),
+    url('../fonts/icomoon.woff?cwpzvw') format('woff'),
+    url('../fonts/icomoon.svg?cwpzvw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bars:before, .fa-bars:before {
+  content: "\e917";
+}
+.icon-calendar-alt:before, .fa-calendar-alt:before {
+  content: "\e916";
+}
+.icon-instagram:before, .fa-instagram:before {
+  content: "\e900";
+}
+.icon-twitter:before, .fa-twitter:before {
+  content: "\e901";
+}
+.icon-facebook:before, .fa-facebook:before {
+  content: "\e902";
+}
+.icon-chevron-left:before, .fa-chevron-left:before {
+  content: "\e903";
+}
+.icon-chevron-right:before, .fa-chevron-right:before {
+  content: "\e904";
+}
+.icon-star-o:before, .fa-star-o:before {
+  content: "\e905";
+}
+.icon-long-arrow-right:before, .fa-long-arrow-right:before {
+  content: "\e906";
+}
+.icon-chevron-circle-left:before, .fa-chevron-circle-left:before {
+  content: "\e907";
+}
+.icon-chevron-circle-right:before, .fa-chevron-circle-right:before {
+  content: "\e908";
+}
+.icon-users-crown:before, .fa-users-crown:before {
+  content: "\e909";
+}
+.icon-shield-check:before, .fa-shield-check:before {
+  content: "\e90a";
+}
+.icon-coins:before, .fa-coins:before {
+  content: "\e90b";
+}
+.icon-user-graduate:before, .fa-user-graduate:before {
+  content: "\e90c";
+}
+.icon-star:before, .fa-star:before {
+  content: "\e90d";
+}
+.icon-history:before, .fa-history:before {
+  content: "\e90e";
+}
+.icon-headset:before, .fa-headset:before {
+  content: "\e90f";
+}
+.icon-boxes:before, .fa-boxes:before {
+  content: "\e910";
+}
+.icon-tags:before, .fa-tags:before {
+  content: "\e911";
+}
+.icon-barcode:before, .fa-barcode:before {
+  content: "\e912";
+}
+.icon-truck-loading:before, .fa-truck-loading:before {
+  content: "\e913";
+}
+.icon-chevron-circle-right1:before, .fa-chevron-circle-right1:before {
+  content: "\e914";
+}
+.icon-home:before, .fa-home:before {
+  content: "\e915";
+}
+
+  
+
+body { 
+	font: {
+		size:$base-size;
+		family: $font-main;
+	}
+	-webkit-text-size-adjust: 100%;  //fix for iOS 
+    color: #777;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: normal;
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.h1, h1 {
+    font-size: 2.5rem;
+}
+
+.h2, h2 {
+    font-size: 2rem;
+}
+
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.h4, h4 {
+    font-size: 1.5rem;
+}
+
+// reset
+a {
+    @include animate-fade;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a, button, input, textarea {
+    &:focus {
+        outline: none!important;
+    }
+}
+
+button, input[type="submit"] {
+    @include animate-fade;
+    cursor: pointer;
+}
+
+address {
+    margin:0px;
+    padding:0px;
+}
+iframe {
+    border:0;
+}
+
+i {
+    font-style: normal;
+}
+
+#secondary img, article img, figure, img, img.wp-post-image {
+    max-width: 100%;
+    height: auto;
+}

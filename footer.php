@@ -144,23 +144,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<!-- /.Page Wrapper -->
   
 	<?php wp_footer(); ?>
-	
-	<!-- Modal -->
-	<div class="modal fade" id="tooltip-modal" tabindex="-1" role="dialog" aria-labelledby="tooltip-modalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-		<div class="modal-content">
-		<div class="modal-body">
-		
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true"><i class="fal fa-times"></i></span>
-			</button>
 
-			<?php the_field('privacy_popup_text', 'options'); ?>
-
+	<div class="modal-overlay disclaimer-modal" data-my-element="tooltip-modal">
+		<div class="modal" data-my-element="tooltip-modal">
+			<a class="close-modal">
+				<img src="<?php bloginfo('template_directory'); ?>/img/ico/close.svg" alt="">
+			</a>
+			<!-- close modal -->
+			<div class="disclaimer-modal-wrap">
+				<?php the_field('privacy_popup_text', 'options'); ?>
+			</div>
+			<!-- /.disclaimer-modal-wrap -->
 		</div>
-		<!-- // body  -->
-		</div>
-	</div>
+		<!-- modal -->
 	</div>	
 
 	<?php if( get_field('footer_code_snippet', 'options') ): ?>

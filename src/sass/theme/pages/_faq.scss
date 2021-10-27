@@ -1,0 +1,27 @@
+//FAQ page
+#faq-page {
+	padding-top: 65px;
+	padding-bottom: 130px;
+	@include bp(desktop) {
+        padding-bottom: 120px;
+    }
+    @include bp(lg) {
+        padding-bottom: 90px;
+    }
+    @include bp(md) {
+        padding-bottom: 70px;
+    }
+    @include bp(sm-down) {
+    	padding-top: 50px;
+        padding-bottom: 50px;
+    }
+	h2,h3,p {
+		@include regular-text;
+	}
+	h2,h3 {
+		font-family: $fil-bold;
+	}
+	h3 {
+		color: $yellow;
+	}
+}
