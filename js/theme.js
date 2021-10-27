@@ -6696,10 +6696,10 @@ if (typeof jQuery === 'undefined') {
       e.preventDefault();
       $(this).attr("autocomplete", "off");
     });
-    $(".date-picker-input").attr("autocomplete", "off");
-    $(function () {
-      $(".accordion-list").accordion();
-    });
+    $(".date-picker-input").attr("autocomplete", "off"); // $(function () {
+    //     $(".accordion-list").accordion();
+    // });
+
     $('#testimonals-page .testimonial-box .testimonial-text, #weoffer .weoffer-box h3, #blog-listing .blog-box .blog-content h2, #blogs-section .blog-content h3, #services .service-box h2, #services .service-box h3').matchHeight();
     $('#testimonals-page .testimonial-box .testimonial-author, #weoffer .weoffer-box p, #blogs-section .blog-content p, #blog-listing .blog-box .blog-content p').matchHeight();
     $('.blog-content .blog-info').matchHeight(); // on focus add class to parrent div
