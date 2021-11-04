@@ -157,24 +157,27 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 
                             <?php elseif( get_row_layout() == 'accordion' ): ?>		
 
-                                <div class="blog__accordion">
-                                    <h3><?php the_sub_field('accordion_title'); ?></h3>
+                                <div class="accordion-section">
+									<?php if( get_sub_field('accordion_title') ): ?>
+										<h3><?php the_sub_field('accordion_title'); ?></h3>
+									<?php endif; ?>
+									<div class="accordion-list">
+									<?php if( have_rows('accordion_list') ): ?>
+										<?php while( have_rows('accordion_list') ): the_row(); ?>
 
-                                    <div class="accordion-list">
-                                        <?php if( have_rows('accordion_list') ): ?>
-                                            <?php while( have_rows('accordion_list') ): the_row(); ?>
-                                                <h4><?php the_sub_field('heading'); ?></h4>
-                                                <div class="panel">
-                                                    <div class="panel__content">
-                                                    <?php the_sub_field('content'); ?>
-                                                    </div>
-                                                </div>
-                                            <?php endwhile; ?>
-                                        <?php endif; ?>
-                                    </div>
-                                    <!-- // list  -->
-                                </div>
-                                <!-- // accordion  -->
+											<div class="panel">
+												<h4><?php the_sub_field('heading'); ?></h4>
+												<div class="panel__content">
+													<?php the_sub_field('content'); ?>
+												</div>
+											</div>
+											<!-- /.panel -->
+										<?php endwhile; ?>
+									<?php endif; ?>
+									</div>
+									<!-- // acc  -->
+								</div>
+								<!-- // section  -->
 
                             <?php elseif( get_row_layout() == 'quote' ): ?>	
 
