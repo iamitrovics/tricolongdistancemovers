@@ -809,3 +809,34 @@ section#single-city {
         }
     }
 }
+
+.quiz-box {
+    display: flex;
+    img {
+        margin-right: 15px;
+        position: relative;
+        top:2px;
+        height: auto;
+        width: auto;
+        display: block;
+        object-fit: contain;        
+    }
+    @include bp(sm-down) {
+        margin-bottom: 15px;
+    }
+    label {
+        display: flex;
+        align-items: center;
+    }
+    .wpcf7-quiz-label {
+        color:$white;
+        margin-right: 15px;
+        display: inline-block;
+    }
+    input {
+        height: 66px!important;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        line-height: 66px;
+    }
+}

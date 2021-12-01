@@ -142,6 +142,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div> 
 	<!-- /.Page Wrapper -->
+
+	<div id="fixed-cta">
+		
+		<a href="tel:877 666 8464">
+			<em><img src="<?php bloginfo('template_directory'); ?>/img/ico/phone-solid.svg" alt=""></em>
+			<div class="phone-text">
+				<small class="label">Get a Free Estimate</small>
+				<span>877 666 8464</span>
+			</div>
+			<!-- // text  -->
+		</a>
+
+	</div>
+	<!-- // fixed cta  -->		
   
 	<?php wp_footer(); ?>
 
