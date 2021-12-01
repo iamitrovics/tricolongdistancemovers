@@ -147,8 +147,11 @@
 		}
 	}
 	// accordion
-	.blog__accordion {
-		margin:0px auto;
+	.accordion-section {
+		.panel > div {
+			display: none;
+			padding: 15px;
+		}
 		h4 {
 			text-align: left;
 			border-radius:12px;
