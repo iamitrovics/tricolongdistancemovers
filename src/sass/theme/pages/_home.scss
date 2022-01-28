@@ -134,6 +134,12 @@
 		@include heading-font;
 		text-transform: uppercase;
 	}
+	.col-lg-3 {
+		@media screen and (min-width:1300px) {
+			max-width: 20%;
+			flex: 0 0 20%;
+		}
+	}
 	.service-box {
 		position: relative;
 		border-radius: 20px;
