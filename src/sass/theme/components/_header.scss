@@ -459,3 +459,40 @@ body.single .header-text {
         font-size: 1.475em;
     }
 }
+
+// mobile
+#mobile-menu--btn {
+    @include centre(y);
+    width: 55px;
+    right: 15px;
+    display: none;
+    @include bp(md-down) {
+        display: block;
+    }
+    a {
+        display: block;
+        width: 100%;
+        background-color: $red;
+        padding:10px;
+        border-radius: 6px;
+        span {
+            height: 3px;
+            border-radius:6px;
+            background-color:$yellow;
+            width: 100%;
+            display: block;
+            float: right;
+            @include animate-fade;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }	
+    }
+    .clearfix {
+        clear: both;
+    }       
+}
+
+.mobile-logo {
+    margin:20px auto;
+    display: block;
+}

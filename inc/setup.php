@@ -52,6 +52,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 				'copy' => __( 'TOS Menu', 'understrap' ),
 				'services' => __( 'Services Menu', 'understrap' ),
 				'sitemap' => __( 'Sitemap Menu', 'understrap' ),
+				'mobile' => __( 'Mobile Menu', 'understrap' ),
 			)
 		);
 
