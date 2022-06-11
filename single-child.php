@@ -590,3 +590,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php
 get_footer(); ?>
+
+
+<a href="<?php the_field('banner_url', 'options'); ?>" target="_blank"> <img src="<?php the_field('banner_image_home', 'options'); ?>" alt="" /> </a>

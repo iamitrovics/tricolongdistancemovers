@@ -496,3 +496,19 @@ body.single .header-text {
     margin:20px auto;
     display: block;
 }
+
+.pinned {
+    position: relative;
+    &:after {
+        content:'';
+        @include centre(both);
+        font-size: 20px;
+        background: url('../img/ico/map-marker-alt-light.svg') no-repeat;
+
+        background-size:19px;
+        background-position: center center;
+        width: 32px;
+        height: 32px;
+        z-index: 9999;
+    }
+}
