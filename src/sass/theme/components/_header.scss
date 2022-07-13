@@ -466,7 +466,7 @@ body.single .header-text {
     width: 55px;
     right: 15px;
     display: none;
-    @include bp(md-down) {
+    @include bp(lg-down) {
         display: block;
     }
     a {

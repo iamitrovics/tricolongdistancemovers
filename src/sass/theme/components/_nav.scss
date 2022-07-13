@@ -93,8 +93,12 @@
                 min-width: 108px;
                 margin-right: 10px;
                 @include bp(desktop) {
-                    margin-right: 25px;
-                    min-width: 100px;
+                    margin-right: 20px;
+                    min-width: 90px;
+                }
+                @media screen and (min-width:1200px) and (max-width:1300px) {
+                    margin-right: 10px;
+                    min-width: 80px;
                 }
                 @include bp(lg) {
                     margin-right: 20px;
@@ -133,18 +137,26 @@
         }
         .nav-link {
             font-family: $fil-reg;
-            font-size: 1.400em;
+            font-size: 19px;
             text-align: left;
             color: $brown-light;
-            padding: 0 29px;
+            padding: 0 25px;
             height: 57px;
             line-height: 57px;
             border-radius: 28.5px;
             background: transparent;
             display: block;
             @include bp(desktop) {
-                font-size: 1.3em;
+                font-size: 18px;
+                padding: 0 12px;
+            }
+            @media screen and (min-width:1540px) and (max-width:1640px) {
+                font-size: 18px;
                 padding: 0 15px;
+            }
+            @media screen and (min-width:1200px) and (max-width:1300px) {
+                font-size: 18px;
+                padding: 0 12px;
             }
             @include bp(lg) {
                 font-size: 1.2em;
