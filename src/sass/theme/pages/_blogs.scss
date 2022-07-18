@@ -383,7 +383,11 @@
 				  color:$white;
 				  margin-bottom: 5px;
 			  }
-		
+
+			  .wpcf7-form-control-wrap {
+					position: relative;
+				}			  
+			  
 
 			.form-group {
 				margin-bottom: 30px;
@@ -402,6 +406,37 @@
 					color: #724e4e;
 					padding: 0 80px 0 40px;
 				}
+
+				.your-state, .your-stateto , span[data-name="your-state"], span[data-name="your-stateto"] {
+					position: absolute;
+					top:38px;
+					right:30px;
+					// &:after {
+					//     content:'';
+					//     @include centre(both);
+					//     font-size: 20px;
+					//     background: url('../img/ico/map-marker-alt-light.svg') no-repeat;
+					//     background-size:13px;
+					//     background-position: center center;
+					//     width: 24px;
+					//     height: 24px;
+					//     z-index: 9999;                
+					// }
+					input {
+						width: 44px;
+						height: 44px;
+						text-align: center;
+						line-height: 64px;
+						border:none;
+						color:$white;
+						background-color: $brown;
+						border-radius: 12px;
+						padding:0px;
+						font-size: 16px;
+						position: relative;
+						z-index: 4000;
+					}
+				}					
 
 				// select
 				.bootstrap-select {
